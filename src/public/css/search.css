@@ -1,0 +1,47 @@
+.contents_title {
+    text-align: center;
+    padding: 30px;
+}
+
+.contents_greeting {
+    text-align: center;
+}
+
+.contents_greeting-content {
+    padding: 30px 0 30px 0;
+    font-size: 20px;
+}
+
+.table {
+    display: flex;
+    justify-content: center;
+}
+
+.table_contents {
+    text-align: center;
+    width: 90vw;
+    margin: 0 5vw 20px 5vw;
+}
+
+.table_contents-row {
+    border-top: 1px gray solid;
+    height: 50px;
+}
+
+
+.result_pagenumber {
+    display: flex;
+    justify-content: center;
+
+}
+
+.result_pagenumber-paginate {
+    margin-bottom: 20px;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: black;
+}

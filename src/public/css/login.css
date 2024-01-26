@@ -1,0 +1,53 @@
+.logintitle{
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.logintitle_content{
+    font-size: 20px;
+}
+
+.input_inner{
+    text-align: center;
+    margin:20px;
+}
+
+.input_inner-content{
+    width: 350px;
+    height: 40px;
+    background-color: gainsboro;
+    border-radius: 4px;
+    border: 2px solid gray;
+    outline: none;
+}
+
+.input_submit{
+    height: 40px;
+    width: 350px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius:4px;
+    cursor: pointer;
+}
+
+.input_new{
+    text-align: center;
+    padding-bottom: 200px;
+
+}
+
+.input_new-sentence{
+    text-align: center;
+    margin-bottom: 0;
+    color: gray;
+}
+
+.input_new-register{
+    text-decoration: none;
+}
+
+a:link,a:visited,a:hover,a:active {
+    color: blue;
+}

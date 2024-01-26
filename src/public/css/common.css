@@ -1,0 +1,53 @@
+.header{
+
+    display: flex;
+    height: 80px;
+    
+}
+
+.title{
+
+    display: flex;
+    margin-left: 30px;
+    font-size: 35px;
+    vertical-align: middle;
+    margin-top: 15px;
+    font-family:sans-serif;
+    font-weight: bold;
+    
+}
+
+.header_list {
+    display: flex;
+    width: 400px;
+    margin: 0 0 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 30px;
+    color: black;
+}
+
+.header_home {
+    text-decoration: none;
+}
+
+.header_date {
+    text-decoration: none;
+}
+
+.header_user {
+    text-decoration: none;
+}
+
+.header_logout {
+    text-decoration: none;
+}
+
+.main{
+    background-color:gainsboro;
+    height: 600px;
+}
+
+.footer{
+    text-align: center;
+}
