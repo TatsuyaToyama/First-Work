@@ -1,10 +1,4 @@
-
-.contents{
-
-}
-
 .contents_title{
-    /* background-color: aqua;  */
     text-align: center;
     padding: 30px;
 }
@@ -13,17 +7,14 @@
     width: 200px;
     margin-top: 10px;
     background-color: blue;
-
 }
 
 .table{
-    /* background-color: blue; */
     display: flex;
     justify-content: center;
 }
 
 .table_contents{
-    /* background-color: beige; */
     text-align: center;
     width: 90vw;
     margin: 0 5vw 20px 5vw;
@@ -42,15 +33,9 @@
 }
 
 .result_pagenumber-paginate{
-    /* display: flex;
-    justify-content: flex-end; */
-    /* @apply flex justify-end; */
     margin-bottom: 20px;
     
 }
-
-
-
 
 a:link,a:visited,a:hover,a:active {
     color: black;

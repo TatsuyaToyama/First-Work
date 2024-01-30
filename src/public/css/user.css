@@ -24,20 +24,15 @@
     height: 50px;
 }
 
-
 .result_pagenumber {
     display: flex;
     justify-content: center;
-
 }
 
 .result_pagenumber-paginate {
     margin-bottom: 20px;
 }
 
-a:link,
-a:visited,
-a:hover,
-a:active {
+a:link,a:visited,a:hover,a:active {
     color: black;
 }

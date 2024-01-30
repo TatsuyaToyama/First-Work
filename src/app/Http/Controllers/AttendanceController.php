@@ -67,7 +67,7 @@ class AttendanceController extends Controller
         // 検索結果があったら該当行に格納、ない場合新しくIdを付与して名前、日付ごと格納
 
         if($search_item !== null){
-            // 休憩終了が打ち込まれた際に総休憩時間を計算し、入力する
+            // 休憩終了が打ち込まれていた際に総休憩時間を計算し、入力する
             if($record_item['break_end'] !== null){
                 //計算のためTime型からDateTime型に変更
                 $breakEndTimestamp = DateTime::createFromFormat('H:i:s', $record_item['break_end'])->getTimestamp();
@@ -100,9 +100,6 @@ class AttendanceController extends Controller
 
             $search_item->fill($record_item);
             $search_item->save();
-            
-            
-
             
         }else{
                 Record::create($record_item);
@@ -140,8 +137,6 @@ class AttendanceController extends Controller
         $search_date= Record::where('date', $date['selectedDate'])
                     ->select('name', 'work_start', 'work_end', 'break_total','created_at','updated_at')
                     ->paginate(5);
-
-        
 
         $number = count($search_date);
 
@@ -200,19 +195,15 @@ class AttendanceController extends Controller
     }
 
     public function user(){
-
         $search_user= User::select('name')
                     ->distinct(['name'])
                     ->paginate(5);
-
         return view('user',['search_user' => $search_user]);
     }
 
 
     public function search(Request $request){
-
         $search_name=$request -> only(['name']);
-
         $request->session()->put([
             '_old_input' => [
             'name' => $search_name
@@ -225,9 +216,7 @@ class AttendanceController extends Controller
         
         if($search_user->total() !== 0){
             $number = count($search_user);
-
             for($i=0; $i<$number ;$i++){
-
                  if($search_user[$i]['break_total'] !== null){
                     list($hours, $minutes, $seconds) = explode(':',$search_user[$i]['break_total']);
                     $breakTotalTime = $hours * 3600 + $minutes * 60 + $seconds;
@@ -235,9 +224,7 @@ class AttendanceController extends Controller
                     $search_user[$i]['break_total'] ="-";
                     $breakTotalTime=0;
                 }
-
                 if($search_user[$i]['work_end'] !== null){
-
                     // work_start, work_end, break_totalを計算可能な型に変更
                     $workStartTimestamp = DateTime::createFromFormat('H:i:s', $search_user[$i]['work_start'])->getTimestamp();
                     $workEndTimestamp = DateTime::createFromFormat('H:i:s', $search_user[$i]['work_end'])->getTimestamp();
@@ -264,14 +251,12 @@ class AttendanceController extends Controller
                     $workEndTimestamp = sprintf("%02d:%02d:%02d", $hours, $minutes, $seconds);
                     $search_user[$i]['work_end']=$workEndTimestamp;
                     }
-                    
                 }else{
                     $search_user[$i]['work_end'] = "-";
                     $search_user[$i]['work_time'] = "-";
                 }
             }
         }else{
-            // $search_user=[];
             $search_user[0]=[
                 'name'=> $search_name['name'],
                 'date'=> "-",
@@ -280,25 +265,7 @@ class AttendanceController extends Controller
                 'break_total' => "-",
                 'work_time' => "-"
                 ];
-            
         }
         return view('search',['search_user' => $search_user]);
-    }
-
-
-
-
-
-    public function submitdate(Request $request){
-        // $date = $request -> only('selectedDate');
-        // $request->session()->put([
-        // '_old_input' => [
-        //     'selectedDate' => $date['selectedDate']
-        // ]
-        // ]);
-        // $search_date= Record::where('date', $date['selectedDate'])
-        //             ->get();
-        // return view('attendance',['search_date'=> $search_date]);
-        return redirect()->route('attendance.date')->with('request', $request);
-    }    
+    }  
 }

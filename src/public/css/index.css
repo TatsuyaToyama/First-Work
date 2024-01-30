@@ -1,12 +1,3 @@
-.alert_alert-danger{
-    background-color: pink;
-    color: red;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    padding-left: 30px;
-}
-
 .contents_greeting{
     text-align: center;
     padding-top: 40px;
@@ -34,7 +25,6 @@
     margin: 10px;
     background-color: white;
     font-size: 15px;
-
 }
 
 a:link,a:visited,a:hover,a:active {

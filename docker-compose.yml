@@ -41,19 +41,6 @@ services:
         ports:
             - 8080:80
 
-
-    # mailserver:
-    #     image: catatnight/postfix
-    #     container_name: mailserver
-    #     ports:
-    #         - "587:587"
-    #         - "25:25"
-    #     environment:
-    #         - maildomain=example.com
-    #         - smtp_user=username:password
-
-
-
     mailcatcher:
         image: schickling/mailcatcher
         container_name: mailcatcher
