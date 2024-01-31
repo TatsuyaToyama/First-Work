@@ -106,7 +106,6 @@ class AttendanceController extends Controller
                 $search_item= $record_item;
                  
         }
-        // return view('index',['search_item'=>$search_item]);
         return redirect()->route('records.index')->with('search_item', $search_item);
     }
 
